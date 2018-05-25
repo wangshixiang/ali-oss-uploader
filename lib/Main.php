@@ -3,7 +3,13 @@ namespace lib;
 class Main{
     function run(){
         echo "\r\n------------start-------------\r\n";
-        $this->dir('');
+        if(empty(Config::$uploadList)){
+            $this->dir('');
+        } else {
+            foreach (Config::$uploadList as $item){
+                $this->upload_one($item);
+            }
+        }
         echo "\r\n------------end----------------\r\n";
     }
     function upload_one($path){

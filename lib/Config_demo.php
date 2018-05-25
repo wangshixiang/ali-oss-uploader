@@ -15,4 +15,6 @@ class Config{
         'other file or path'
     ];
     static $source = 'C:\Users\Administrator\Desktop\your_path';
+    static $uploadList = [
+    ];//empty for all file
 }
