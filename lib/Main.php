@@ -30,7 +30,7 @@ class Main{
                 continue;
             }
             if(is_file(SOURCE_PATH.'/'.$path.'/'.$item)){
-                $this->upload_one($path.'/'.$item);
+                $this->upload_one(substr($path.'/'.$item,1));
                 continue;
             }
         }

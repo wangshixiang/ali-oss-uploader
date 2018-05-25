@@ -13,9 +13,9 @@ class Oss{
     function uploadFile($path)
     {
         $ossClient = $this->getClient();
-        $object = Config::$oss_basepath.substr($path,1);
+        $object = Config::$oss_basepath.$path;
         echo "\r\n uploading ".$object;
-        $filePath = SOURCE_PATH.$path;
+        $filePath = SOURCE_PATH.'/'.$path;
         echo " from ".$filePath."\r\n";
         try{
             $ossClient->uploadFile(Config::$bucket, $object, $filePath);
