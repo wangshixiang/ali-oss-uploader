@@ -4,19 +4,19 @@ use wangshixiang\alioss_uploader\lib\Main;
 $main = new Main([
     'accessKeyId' => '',
     'accessKeySecret' => '',
-    'endpoint' => 'oss-cn-shenzhen.aliyuncs.com',
+    'endpoint' => '',
     'bucket' => '',
-    'oss_basepath' => '',//'','app/'
+    'oss_basepath' => '',//'','app/' the base dir you want to upload to,empty for root path
     'ignore' => [
         '.git',
         '.idea',
         'bower_components',
         '.gitignore',
         'bower.json',
-    ],
+    ],// ignore path or file
     'source' => 'C:\Users\Administrator\Desktop\wuliu',
     'uploadList' => [
         'test.txt'
-    ]//empty for all file
+    ]//white list,upload list item only,empty for all file
 ]);
 $main->run();
