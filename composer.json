@@ -7,5 +7,12 @@
             "email": "447557027@qq.com"
         }
     ],
-    "require": {}
+    "require": {
+        "aliyuncs/oss-sdk-php": "^2.3"
+    },
+    "autoload":{
+        "psr-4":{
+            "lib\\":"lib/"
+        }
+    }
 }
