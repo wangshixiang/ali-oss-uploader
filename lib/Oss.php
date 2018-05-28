@@ -1,5 +1,5 @@
 <?php
-namespace lib;
+namespace wangshixiang\alioss_uploader\lib;
 use OSS\OssClient;
 
 class Oss{

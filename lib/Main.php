@@ -1,6 +1,20 @@
 <?php
-namespace lib;
+namespace wangshixiang\alioss_uploader\lib;
+
 class Main{
+    function __construct($config)
+    {
+        Config::$accessKeyId = $config['accessKeyId'];
+        Config::$accessKeySecret = $config['accessKeySecret'];
+        Config::$endpoint = $config['endpoint'];
+        Config::$bucket = $config['bucket'];
+        Config::$oss_basepath = $config['oss_basepath'];//e.g.'','app/';
+        Config::$ignore = $config['ignore'];//array
+        Config::$source = $config['source'];//root path to source
+        Config::$uploadList = $config['uploadList'];//white list,upload list item only
+        define('SOURCE_PATH',Config::$source);
+    }
+
     function run(){
         echo "\r\n------------start-------------\r\n";
         if(empty(Config::$uploadList)){
