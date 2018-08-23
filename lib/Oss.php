@@ -14,7 +14,7 @@ class Oss{
     {
         $ossClient = $this->getClient();
         $object = Config::$oss_basepath.$path;
-        if($ossClient->doesObjectExist($object)){
+        if($ossClient->doesObjectExist(Config::$bucket,$object)){
             echo "\r\n object exist ".$object."\r\n";
             return;
         }
