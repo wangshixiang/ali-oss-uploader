@@ -14,6 +14,10 @@ class Oss{
     {
         $ossClient = $this->getClient();
         $object = Config::$oss_basepath.$path;
+        if($ossClient->doesObjectExist($object)){
+            echo "\r\n object exist ".$object."\r\n";
+            return;
+        }
         echo "\r\n uploading ".$object;
         $filePath = SOURCE_PATH.'/'.$path;
         echo " from ".$filePath."\r\n";
